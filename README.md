@@ -66,7 +66,6 @@ Esto levantará los siguientes servicios:
 |--------|---|-------------------------|
 |API REST|http://localhost:3000|No requiere|
 |Adminer|http://localhost:8080|Motor: MySQL, servidor: mysql, usuario: iot_user, Contraseña: iot_password, Base de datos: iot_data|
-|--|--|--|
 
 # Base de datos
 
@@ -102,13 +101,13 @@ El simulador se comunica directamente con la API REST utilizando el nombre del s
 # Comandos útiles
 
 | Acción	| Comando |
+|-----------|---------|
 | Detener todos los contenedores |	docker-compose down |
 | Detener y eliminar volúmenes persistentes	| docker-compose down -v |
 | Reconstruir todo después de cambios	| docker-compose up --build -d |
 | Ver logs del API	| docker-compose logs -f api |
 | Ver logs del simulador	| docker-compose logs -f simulator |
 | Ver estado de los contenedores	| docker ps |
-|--|--|
 
 # Trabajo futuro
 - Integración de un dashboard web (Next.js o React) para visualizar los datos en tiempo real.
