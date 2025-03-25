@@ -9,6 +9,7 @@ Este proyecto implementa un sistema completo para la recepción, almacenamiento 
 - Adminer: Herramienta visual para la gestión y consulta de la base de datos.
 
 # Estructura del Proyecto
+```
 IoT_DB/
 ├── docker-compose.yml        # Orquestación de servicios
 ├── api/                      # API REST Node.js
@@ -22,6 +23,7 @@ IoT_DB/
 ├── init/                     # Script SQL de inicialización
 │   └── init.sql
 └── README.md                 # Documentación del proyecto (este archivo)
+```
 
 # Tecnologías utilizadas
 
