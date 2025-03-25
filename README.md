@@ -1,14 +1,14 @@
-#Descripción General
+# Descripción General
 Este proyecto implementa un sistema completo para la recepción, almacenamiento y visualización de datos simulados desde dispositivos IoT. La arquitectura se basa en contenedores Docker para asegurar portabilidad, escalabilidad y facilidad de despliegue.
 
-##Componentes principales:
+## Componentes principales:
 
 - API REST (Node.js + Express): Recibe lecturas de sensores simuladas y las almacena en MySQL.
 - Base de Datos (MySQL): Almacena las lecturas provenientes de los dispositivos.
 - Simulador de Dispositivos (Python): Simula múltiples dispositivos ESP32 enviando lecturas periódicas.
 - Adminer: Herramienta visual para la gestión y consulta de la base de datos.
 
-#Estructura del Proyecto
+# Estructura del Proyecto
 IoT_DB/
 ├── docker-compose.yml        # Orquestación de servicios
 ├── api/                      # API REST Node.js
@@ -23,7 +23,7 @@ IoT_DB/
 │   └── init.sql
 └── README.md                 # Documentación del proyecto (este archivo)
 
-#Tecnologías utilizadas
+# Tecnologías utilizadas
 
 | Componente | Tecnología / Lenguaje |
 |------------|----------------------------------|
@@ -35,12 +35,12 @@ IoT_DB/
 | Sistema de control de versiones | Git |
 
 
-#Instalación y Despliegue
+# Instalación y Despliegue
 
-##Requisitos Previos:
+## Requisitos Previos:
 Docker y Docker Compose instalados.
 
-##Pasos para ejecutar el proyecto:
+## Pasos para ejecutar el proyecto:
 
 1. Clonar el repositorio:
 
@@ -60,7 +60,7 @@ Esto levantará los siguientes servicios:
 - Contenedor API REST (servidor iot-api).
 - Contenedor Adminer (herramienta de gestión de base de datos).
 
-#Acceso a los servicios
+# Acceso a los servicios
 
 |Servicio|URL|Credenciales por defecto|
 |--------|---|-------------------------|
@@ -68,7 +68,7 @@ Esto levantará los siguientes servicios:
 |Adminer|http://localhost:8080|Motor: MySQL, servidor: mysql, usuario: iot_user, Contraseña: iot_password, Base de datos: iot_data|
 |--|--|--|
 
-#Base de datos
+# Base de datos
 
 La base de datos se inicializa automáticamente al levantar los contenedores.
 
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS lecturas (
 );
 ```
 
-#Simulador de Dispositivos
+# Simulador de Dispositivos
 El simulador Python envía periódicamente lecturas aleatorias de:
 - Temperatura
 - Humedad
@@ -99,7 +99,7 @@ El simulador Python envía periódicamente lecturas aleatorias de:
 
 El simulador se comunica directamente con la API REST utilizando el nombre del servicio (api) gracias a Docker networking.
 
-#Comandos útiles
+# Comandos útiles
 
 | Acción	| Comando |
 | Detener todos los contenedores |	docker-compose down |
@@ -110,7 +110,7 @@ El simulador se comunica directamente con la API REST utilizando el nombre del s
 | Ver estado de los contenedores	| docker ps |
 |--|--|
 
-#Trabajo futuro
+# Trabajo futuro
 - Integración de un dashboard web (Next.js o React) para visualizar los datos en tiempo real.
 - Seguridad (Autenticación JWT en la API).
 - Configuración de Prometheus + Grafana para monitoreo.
@@ -127,5 +127,3 @@ El simulador se comunica directamente con la API REST utilizando el nombre del s
 - [Requests](https://docs.python-requests.org/en/master/)
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Git](https://git-scm.com/)
-
- #IoT_DB
