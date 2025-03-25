@@ -1,0 +1,49 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: iot-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: iot_data
+      MYSQL_USER: iot_user
+      MYSQL_PASSWORD: iot_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+      - mysql_data:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+
+  api:
+    build: ./api
+    container_name: iot-api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    volumes:
+      - ./api:/usr/src/app
+    environment:
+      DB_HOST: mysql
+      DB_USER: iot_user
+      DB_PASSWORD: iot_password
+      DB_DATABASE: iot_data
+
+  simulator:
+    build: ./simulator
+    container_name: iot-simulator
+    depends_on:
+      - api
+    restart: always
+    volumes:
+      - ./simulator:/usr/src/app
+
+volumes:
+  mysql_data:
