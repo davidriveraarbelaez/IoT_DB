@@ -48,10 +48,15 @@ Docker y Docker Compose instalados.
 
 ```bash
 git clone https://github.com/davidriveraarbelaez/IoT_DB.git
+```
+2. Acceder a la carpeta del proyecto:
+
+```bash
 cd IoT_DB
 ```
 
-2. Levantar todos los servicios:
+3. Verificador que Docker esté inicializado antes de continuar con el siguiente paso.
+4. Levantar todos los servicios:
 
 ```bash 
 docker-compose up --build -d
