@@ -47,7 +47,7 @@ Docker y Docker Compose instalados.
 1. Clonar el repositorio:
 
 ```bash
-git clone
+git clone https://github.com/davidriveraarbelaez/IoT_DB.git
 cd IoT_DB
 ```
 
